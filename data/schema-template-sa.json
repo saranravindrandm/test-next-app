@@ -1,0 +1,93 @@
+{
+  "id": "",
+  "releaseDate": "",
+  "version": "",
+  "searchVector": null,
+  "slugId": 0,
+  "createdAt": "",
+  "updatedAt": "",
+  "title": "",
+  "metaDescription": "",
+  "productName": "",
+  "tagline": "",
+  "featuredImage": "",
+  "productLogo": "",
+  "productUrl": "",
+  "shortDescription": "",
+  "fullDescription": "",
+  "howItWorks": "",
+  "category": "",
+  "positiveUserSentiments": [],
+  "negativeUserSentiments": [],
+  "demoVideos": [],
+  "screenshots": [],
+  "ctaText": "",
+  "ctaUrl": "",
+  "ctaAnchorText": "",
+  "supportEmail": "",
+  "phoneNumber": "",
+  "rating": 0,
+  "featured": false,
+  "verified": false,
+  "pros": [],
+  "cons": [],
+  "paymentOptions": [],
+  "tags": [],
+  "platformsAvailability": "",
+  "privacyAndSecurity": "",
+  "restrictions": "",
+  "featuresAndBenefits": [
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "uniqueSellingPoints": [
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "targetAudiences": [
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "pricing": {
+    "model": "",
+    "freeTier": "",
+    "freeTrial": "",
+    "premiumPlans": [
+      {
+        "name": "",
+        "price": 0,
+        "features": ""
+      }
+    ]
+  },
+  "userReviews": [
+    {
+      "title": "",
+      "description": ""
+    }
+  ],
+  "faq": [
+    {
+      "question": "",
+      "answer": ""
+    }
+  ],
+  "relatedLinks": [
+    {
+      "url": "",
+      "anchorText": ""
+    }
+  ]
+}
