@@ -9,66 +9,66 @@ datasource db {
 
 model AggregatorTool {
   id                     String                @id @default(uuid())
-  releaseDate            DateTime?
-  version                String?
-  searchVector           String?
-  slugId                 Int?
-  createdAt              DateTime              @default(now())
-  updatedAt              DateTime              @updatedAt
   title                  String
-  metaDescription        String?
-  productName            String
-  tagline                String?
-  featuredImage          String?
-  productLogo            String?
-  productUrl             String?
-  shortDescription       String?
-  fullDescription        String?
-  howItWorks             String?
+  createdAt              DateTime              @default(now())
   category               String?
-  positiveUserSentiments String[]
-  negativeUserSentiments String[]
-  demoVideos             String[]
-  screenshots            String[]
+  cons                   String[]
+  ctaAnchorText          String?
   ctaText                String?
   ctaUrl                 String?
-  ctaAnchorText          String?
-  supportEmail           String?
-  phoneNumber            String?
-  rating                 Float?
+  demoVideos             String[]
   featured               Boolean?
-  verified               Boolean?
-  pros                   String[]
-  cons                   String[]
+  featuredImage          String?
+  fullDescription        String?
+  howItWorks             String?
+  metaDescription        String?
+  negativeUserSentiments String[]
   paymentOptions         String[]
-  tags                   String[]
+  phoneNumber            String?
   platformsAvailability  String?
+  positiveUserSentiments String[]
   privacyAndSecurity     String?
+  productLogo            String?
+  productName            String
+  productUrl             String?
+  pros                   String[]
+  rating                 Float?
+  releaseDate            DateTime?
   restrictions           String?
-  featuresAndBenefits    FeaturesAndBenefits[]
-  uniqueSellingPoints    UniqueSellingPoints[]
+  screenshots            String[]
+  searchVector           String?
+  shortDescription       String?
+  slugId                 Int?
+  supportEmail           String?
+  tagline                String?
+  tags                   String[]
+  updatedAt              DateTime              @updatedAt
+  verified               Boolean?
+  version                String?
   aiCapabilities         AICapabilities[]
-  targetAudiences        TargetAudience[]
-  pricing                Pricing?
-  userReviews            UserReview[]
   faq                    FAQ[]
+  featuresAndBenefits    FeaturesAndBenefits[]
+  pricing                Pricing?
   relatedLinks           RelatedLink[]
+  targetAudiences        TargetAudience[]
+  uniqueSellingPoints    UniqueSellingPoints[]
+  userReviews            UserReview[]
 }
 
 model FeaturesAndBenefits {
   id               String         @id @default(uuid())
   title            String
   description      String
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model UniqueSellingPoints {
   id               String         @id @default(uuid())
   title            String
   description      String
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model AICapabilities {
@@ -79,25 +79,25 @@ model AICapabilities {
   url              String
   source           String
   createdAt        DateTime       @default(now())
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model TargetAudience {
   id               String         @id @default(uuid())
   name             String
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model Pricing {
   id               String         @id @default(uuid())
-  model            String?
+  aggregatorToolId String         @unique
   freeTier         String?
   freeTrial        String?
+  model            String?
   premiumPlans     PremiumPlan[]
   aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
-  aggregatorToolId String         @unique
 }
 
 model PremiumPlan {
@@ -105,30 +105,30 @@ model PremiumPlan {
   name      String
   price     Float
   features  String
-  pricing   Pricing @relation(fields: [pricingId], references: [id])
   pricingId String
+  pricing   Pricing @relation(fields: [pricingId], references: [id])
 }
 
 model UserReview {
   id               String         @id @default(uuid())
   rating           Int
   comment          String
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model FAQ {
   id               String         @id @default(uuid())
   question         String
   answer           String
-  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
+  aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
 }
 
 model RelatedLink {
   id               String         @id @default(uuid())
   url              String
-  description      String
+  anchor_text      String  // Changed from 'description' to 'anchor_text'
   aggregatorTool   AggregatorTool @relation(fields: [aggregatorToolId], references: [id])
   aggregatorToolId String
 }
