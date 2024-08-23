@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "AggregatorTool" ALTER COLUMN "featured" DROP NOT NULL,
+ALTER COLUMN "rating" DROP NOT NULL,
+ALTER COLUMN "verified" DROP NOT NULL;
